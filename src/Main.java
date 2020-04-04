@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     private static Scanner s = new Scanner(System.in);
     private static Integer[] dados;
-
+    private static int teste;
 
     public static void troca(int i, int j, Comparable[]a){
         Comparable temp = a[i];

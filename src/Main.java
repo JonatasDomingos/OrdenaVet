@@ -11,8 +11,6 @@ public class Main {
     private static Integer[] dados;
     private static int teste;
 
-
-
     public static void troca(int i, int j, Comparable[]a){
         Comparable temp = a[i];
         a[i] = a[j];

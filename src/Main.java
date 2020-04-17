@@ -45,10 +45,9 @@ public class Main {
         }System.out.println();
     } // já fala por si só
 
-    private static double aleatório1(){
+    private static Double aleatorio1(Integer tamanho){
         long tempoInicial = System.currentTimeMillis();
-        Random gerar = new Random();
-        Integer[] dados = new Integer[10000]; //cria vetor de 10000mil posições
+        Random gerar = new Random();        Integer[] dados = new Integer[tamanho]; //cria vetor de Xmil posições
         for(int i = 0; i < dados.length; i++) {
             int rnd = (int) (Math.random() * 1000); // gera um valor randomico de 0.0 ate menores q 1.0, multiplica por 100. Convertendo o resultado para int.
             dados[i] = rnd; // atribui o valor a cada indice do vetor
@@ -58,104 +57,14 @@ public class Main {
         ordenacao(dados);
         long tempoFinal = System.currentTimeMillis();
         double tempo = (tempoFinal-tempoInicial);
-        System.out.println("Valores Ordenados ");
-        imprimirVetor(dados);
+        System.out.println("O vetor de " +tamanho+ " está sendo ordenado ");
+//        imprimirVetor(dados);
         System.out.println();
         System.out.println("Tempo total da execução do processo foi de: "+(tempoFinal-tempoInicial)/1000d);
+        System.out.println();
 
         return tempo;
     } //executa automática a parada toda.
-
-    private static double aleatório2(){
-        long tempoInicial = System.currentTimeMillis();
-        Random gerar = new Random();
-        Integer[] dados = new Integer[50000]; //cria vetor de 50000mil posições
-        for(int i = 0; i < dados.length; i++) {
-            int rnd = (int) (Math.random() * 1000); // gera um valor randomico de 0.0 ate menores q 1.0, multiplica por 100. Convertendo o resultado para int.
-            dados[i] = rnd; // atribui o valor a cada indice do vetor
-        }
-        System.out.println("O tamanho do vetor gerado foi de '"+dados.length+"' e seus valores são: ");
-        imprimirVetor(dados);
-        ordenacao(dados);
-        long tempoFinal = System.currentTimeMillis();
-        double tempo = (tempoFinal-tempoInicial);
-        System.out.println("Valores Ordenados ");
-        imprimirVetor(dados);
-        System.out.println();
-        System.out.println("Tempo total da execução do processo foi de: "+(tempoFinal-tempoInicial)/1000d);
-
-
-        return tempo;
-
-    } //executa automática a parada toda.
-
-    private static double aleatório3(){
-        long tempoInicial = System.currentTimeMillis();
-        Random gerar = new Random();
-        Integer[] dados = new Integer[80000]; //cria vetor de 80000mil posições
-        for(int i = 0; i < dados.length; i++) {
-            int rnd = (int) (Math.random() * 1000); // gera um valor randomico de 0.0 ate menores q 1.0, multiplica por 100. Convertendo o resultado para int.
-            dados[i] = rnd; // atribui o valor a cada indice do vetor
-        }
-        System.out.println("O tamanho do vetor gerado foi de '"+dados.length+"' e seus valores são: ");
-        imprimirVetor(dados);
-        ordenacao(dados);
-        long tempoFinal = System.currentTimeMillis();
-        double tempo = (tempoFinal-tempoInicial);
-        System.out.println("Valores Ordenados ");
-        imprimirVetor(dados);
-        System.out.println();
-        System.out.println("Tempo total da execução do processo foi de: "+(tempoFinal-tempoInicial)/1000d);
-        return tempo;
-
-    } //executa automática a parada toda.
-
-    private static double aleatório4(){
-        long tempoInicial = System.currentTimeMillis();
-        Integer[] dados = new Integer[100000]; //cria o vetor de 10000mil posições
-        for(int i = 0; i < dados.length; i++) {
-            int rnd = (int) (Math.random() * 1000); // gera um valor randomico de 0.0 ate menores q 1.0, multiplica por 100. Convertendo o resultado para int.
-            dados[i] = rnd; // atribui o valor a cada indice do vetor
-        }
-        System.out.println("O tamanho do vetor gerado foi de '"+dados.length+"' e seus valores são: ");
-        imprimirVetor(dados);
-        ordenacao(dados);
-        long tempoFinal = System.currentTimeMillis();
-        double tempo =( tempoFinal-tempoInicial);
-        System.out.println("Valores Ordenados ");
-        imprimirVetor(dados);
-        System.out.println();
-        System.out.println("Tempo total da execução do processo foi de: "+(tempoFinal-tempoInicial)/1000d);
-
-        return tempo;
-
-
-    } //executa automática a parada toda.
-
-    private static double aleatório5(){
-        long tempoInicial = System.currentTimeMillis();
-        Integer[] dados = new Integer[120000]; //cria o vetor de 120mil posições
-        for(int i = 0; i < dados.length; i++) {
-            int rnd = (int) (Math.random() * 1000); // gera um valor randomico de 0.0 ate menores q 1.0, multiplica por 100. Convertendo o resultado para int.
-            dados[i] = rnd; // atribui o valor a cada indice do vetor
-        }
-        System.out.println("O tamanho do vetor gerado foi de '"+dados.length+"' e seus valores são: ");
-        imprimirVetor(dados);
-        ordenacao(dados);
-        long tempoFinal = System.currentTimeMillis();
-        double tempo = ((tempoFinal-tempoInicial));
-        System.out.println("Valores Ordenados ");
-        imprimirVetor(dados);
-        System.out.println();
-        System.out.println("Tempo total da execução do processo foi de: "+(tempoFinal-tempoInicial)/1000d);
-
-
-        return tempo;
-
-    } //executa automática a parada toda.
-
-
-
 
 
     private static void manual(){
@@ -179,8 +88,8 @@ public class Main {
         teste = s.nextInt();
         if (teste==0) {
 
-            double[][] dataPlot = {{10000, aleatório1()}, {50000, aleatório2()}, {80000, aleatório3()}, {100000, aleatório4()}, {120000, aleatório5()}};
-            plotarGrafico(dataPlot);
+        double[][] dataPlot = {{10000, aleatorio1(10000)}, {50000, aleatorio1(50000)}, {80000, aleatorio1(80000)}, {100000, aleatorio1(100000)}, {120000, aleatorio1(120000)}};
+        plotarGrafico(dataPlot);
 
 
         } else {

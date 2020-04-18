@@ -43,7 +43,7 @@ public class Main {
         for (int i=0; i< arr.length; i++) {
             System.out.print(arr[i] + " ");
         }System.out.println();
-    } // já fala por si só
+    } // já fala por si só...
 
     private static Double aleatorio1(Integer tamanho){
         long tempoInicial = System.currentTimeMillis();

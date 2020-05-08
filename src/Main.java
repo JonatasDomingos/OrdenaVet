@@ -7,29 +7,37 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner s = new Scanner(System.in);
-    private static Integer[] dados;
-    private static int teste;
+    private static Scanner s = new Scanner(System.in); // 1
+    private static Integer[] dados; // 1
+    private static int teste; // 1
+    private static String num; // 1
 
-    public static void troca(int i, int j, Comparable[]a){
-        Comparable temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
+    public static void troca(int i, int j, Comparable[]a){  // 1
+        Comparable temp = a[i]; // 1
+        a[i] = a[j]; // 1
+        a[j] = temp; // 1
     } // assistente da mágica
 
-    public static double ordenacao(Integer [ ] a ) {
-        int i, j, min;
-        for (i = 0; i < a.length; i++) {
-            min = i;
-            for (j = i + 1; j < a.length; j++) {
-                if (a[j].compareTo(a[min]) <= 0) {
-                    min = j;
+    // (8)
+
+    public static double ordenacao(Integer [ ] a ) { // 1
+        int i, j, min; // 1
+        for (i = 0; i < a.length; i++) { // n
+            min = i; // n-1
+            for (j = i + 1; j < a.length; j++) { // n-1
+                if (a[j].compareTo(a[min]) <= 0) { // n-1
+                    min = j; // n-1
                 }
             }
-            troca(min, i, a);
+            troca(min, i, a); // n-1
         }
-        return 0;
+        return 0; // 1
     } // mágica bolada
+
+    // 2 + ( n + (n-1) + ( (n-1) * (n-1) * (n-1) ) + (n-1) + 1
+    // 2 + ( n + (n-1) + ( (n^2 - 2n + 1) * (n-1) ) + (n-1) + 1
+    // 2 + ( n + (n-1) + ( n^3 - n^2 - 2n^2 + 2n + n - 1 ) + (n-1) + 1
+    // 2 + ( n + (n-1) + (
 
     private static Integer[] pegaEntrada(){
         dados = new Integer[(teste)];
